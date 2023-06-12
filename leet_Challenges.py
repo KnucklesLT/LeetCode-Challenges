@@ -96,9 +96,35 @@ Input: s = "axc", t = "ahbgdc"
 Output: false'''
 
 def isSubsequence(self, s, t):
-      for char in s:
-          found = t.find(char)
-          if found == -1:
-              return False
-          t = t[found+1:]
-      return True
+    for char in s:
+        found = t.find(char)
+        if found == -1:
+            return False
+        t = t[found+1:]
+    return True
+
+'''
+Exercise 6:
+Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+A word is a maximal 
+substring consisting of non-space characters only.
+
+Example 1:
+
+Input: s = "Hello World"
+Output: 5
+Explanation: The last word is "World" with length 5.
+Example 2:
+
+Input: s = "   fly me   to   the moon  "
+Output: 4
+Explanation: The last word is "moon" with length 4.
+Example 3:
+
+Input: s = "luffy is still joyboy"
+Output: 6
+Explanation: The last word is "joyboy" with length 6.'''
+
+def lengthOfLastWord(self, s):
+    return len(s.split()[-1])
