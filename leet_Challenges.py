@@ -12,9 +12,24 @@ Input: nums = [1,2,3,4]
 Output: false'''
 
 def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         return len(nums) != len(set(nums))
+
+'''
+Exercise 2:
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+'''
+
+def isAnagram(self, s, t):
+        return sorted(list(s)) == sorted(list(t))
 
