@@ -59,17 +59,17 @@ class Solution(object):
 
 After doing so, return the array.
 
-Example 1:
+  Example 1:
 
-Input: arr = [17,18,5,4,6,1]
-Output: [18,6,6,6,1,-1]
-Explanation: 
-- index 0 --> the greatest element to the right of index 0 is index 1 (18).
-- index 1 --> the greatest element to the right of index 1 is index 4 (6).
-- index 2 --> the greatest element to the right of index 2 is index 4 (6).
-- index 3 --> the greatest element to the right of index 3 is index 4 (6).
-- index 4 --> the greatest element to the right of index 4 is index 5 (1).
-- index 5 --> there are no elements to the right of index 5, so we put -1.
+  Input: arr = [17,18,5,4,6,1]
+  Output: [18,6,6,6,1,-1]
+  Explanation: 
+  - index 0 --> the greatest element to the right of index 0 is index 1 (18).
+  - index 1 --> the greatest element to the right of index 1 is index 4 (6).
+  - index 2 --> the greatest element to the right of index 2 is index 4 (6).
+  - index 3 --> the greatest element to the right of index 3 is index 4 (6).
+  - index 4 --> the greatest element to the right of index 4 is index 5 (1).
+  - index 5 --> there are no elements to the right of index 5, so we put -1.
   '''
 
   def replaceElements(self, arr):
@@ -93,7 +93,8 @@ Output: true
 Example 2:
 
 Input: s = "axc", t = "ahbgdc"
-Output: false'''
+Output: false
+'''
 
 def isSubsequence(self, s, t):
     for char in s:
@@ -148,7 +149,8 @@ Output: [1,2]
 Example 3:
 
 Input: nums = [3,3], target = 6
-Output: [0,1]'''
+Output: [0,1]
+'''
 
 def twoSum(self, nums, target):
       num_map = {}
@@ -161,3 +163,27 @@ def twoSum(self, nums, target):
 
           num_map[num] = i
       return []
+
+'''
+Exercise 8:
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+Example 1:
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+'''
+
+def groupAnagrams(self, strs):
+      anagram_map = {}
+
+      for word in strs:
+          sorted_s = ''.join(sorted(word))
+          if sorted_s not in anagram_map:
+              anagram_map[sorted_s] = [word]
+          else:
+              anagram_map[sorted_s].append(word)
+
+      return list(anagram_map.values())
